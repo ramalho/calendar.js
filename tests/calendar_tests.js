@@ -1,3 +1,4 @@
+var Calendar = exports.Calendar;
 var jan_1_2012 = new Date(2012,0,1);
 
 test('January 1, 2012 is Sunday', function() {

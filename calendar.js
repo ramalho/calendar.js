@@ -1,4 +1,4 @@
-function Calendar(firstWeekDay) {
+var Calendar = function Calendar(firstWeekDay) {
     //properties
     this.firstWeekDay = firstWeekDay || 0; // 0 = Sunday
 };
@@ -28,4 +28,7 @@ Calendar.prototype = {
         } while (date.getMonth()<=month);
         return weeks;
     }
+};
+exports = {
+    Calendar : Calendar
 };
