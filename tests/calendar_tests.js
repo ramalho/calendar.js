@@ -13,8 +13,11 @@ test('weekStartDate', function() {
 });
 test('monthDatesCalendar', function() {
     var mdc_jan_2012 = monthDatesCalendar(2012,0);
-    equal(mdc_jan_2012.length, 5, 'January 2012 has 5 calendar weeks');
+    var mdc_feb_2012 = monthDatesCalendar(2012,1);
+    equal(mdc_jan_2012.length, 5, 'January 2012 spans 5 calendar weeks');
+    equal(mdc_feb_2012.length, 5, 'February 2012 spans 5 calendar weeks');
     deepEqual(mdc_jan_2012[0][0], jan_1_2012, 'first Sunday is Jan. 1st. = '+mdc_jan_2012[0][0]);
     deepEqual(mdc_jan_2012[1][0], new Date(2012,0,8), 'second Sunday is Jan. 8th.');
-    deepEqual(mdc_jan_2012[4][6], new Date(2012,1,4), 'last Saturday Feb. 4th.');
+    deepEqual(mdc_jan_2012[mdc_jan_2012.length-1][6], new Date(2012,1,4), 'last Saturday Feb. 4th.');
+    deepEqual(mdc_feb_2012[mdc_feb_2012.length-1][6], new Date(2012,2,3), 'last Saturday Mar. 3rd. ='+mdc_feb_2012[4][6]);
 });

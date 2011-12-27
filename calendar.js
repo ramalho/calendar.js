@@ -1,9 +1,8 @@
-oneDay = 24 * 60 * 60 * 1000; // H, M, S, miliseconds
 firstWeekDay = 0;  // 0 = Sunday
 
 function weekStartDate(date) {
     while (date.getDay() !== firstWeekDay) {
-        date = new Date(date.getTime() - oneDay);
+        date.setDate(date.getDate() - 1);
     }
     return date;
 }
@@ -16,7 +15,8 @@ function monthDatesCalendar(year, month) {
     do {
         for (i=0; i<7; i++) {
             week.push(date);
-            date = new Date(date.getTime() + oneDay);
+            date = new Date(date);
+            date.setDate(date.getDate() + 1);
         }
         weeks.push(week);
         week = [];
