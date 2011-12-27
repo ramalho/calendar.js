@@ -25,7 +25,7 @@ test('weekStartDate, Monday', function() {
     deepEqual(calMon.weekStartDate(new Date(2012,0,9)), new Date(2012,0,9),
         'third week of 2012 starts on Jan. 9th');
 });
-test('monthDatesCalendar, Sunday', function() {
+test('monthDates, Sunday', function() {
     var calSun = new Calendar(); // calendar with Sunday as first day of the week
     var mdc_jan_2012 = calSun.monthDates(2012,0);
     var mdc_feb_2012 = calSun.monthDates(2012,1);
@@ -36,7 +36,7 @@ test('monthDatesCalendar, Sunday', function() {
     deepEqual(mdc_jan_2012[mdc_jan_2012.length-1][6], new Date(2012,1,4), 'last Saturday Feb. 4th.');
     deepEqual(mdc_feb_2012[mdc_feb_2012.length-1][6], new Date(2012,2,3), 'last Saturday Mar. 3rd. ='+mdc_feb_2012[4][6]);
 });
-test('monthDatesCalendar, Monday', function() {
+test('monthDates, Monday', function() {
     var calMon = new Calendar(1); // calendar with Monday as first day of the week
     var mdc_jan_2012 = calMon.monthDates(2012,0);
     var mdc_feb_2012 = calMon.monthDates(2012,1);
@@ -47,7 +47,7 @@ test('monthDatesCalendar, Monday', function() {
     deepEqual(mdc_jan_2012[mdc_jan_2012.length-1][6], new Date(2012,1,5), 'last Sunday Feb. 5th.');
     deepEqual(mdc_feb_2012[mdc_feb_2012.length-1][6], new Date(2012,2,4), 'last Sunday Mar. 4th. ='+mdc_feb_2012[4][6]);
 });
-test('monthDaysCalendar, Sunday', function() {
+test('monthDays, Sunday', function() {
     var calSun = new Calendar(); // calendar with Sunday as first day of the week
     var mdc_jan_2012 = calSun.monthDays(2012,0);
     var mdc_feb_2012 = calSun.monthDays(2012,1);
@@ -55,4 +55,12 @@ test('monthDaysCalendar, Sunday', function() {
     deepEqual(mdc_jan_2012[0], [1,2,3,4,5,6,7], 'first week is Jan. 1st to 7th');
     deepEqual(mdc_jan_2012[4], [29,30,31,0,0,0,0], 'last week is Jan. 29th to Feb 4th');
     deepEqual(mdc_feb_2012[0], [0,0,0,1,2,3,4,], 'first week is Jan. 29th to Feb 4th');
+});
+test('monthText, Sunday', function() {
+    var calSun = new Calendar(); // calendar with Sunday as first day of the week
+    equal(calSun.monthText(2012,1), ["          1  2  3  4",
+                                     " 5  6  7  8  9 10 11",
+                                     "12 13 14 15 16 17 18",
+                                     "19 20 21 22 23 24 25",
+                                     "26 27 28 29         "].join("\n"));
 });
