@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/ramalho/calendar.js.png)](http://travis-ci.org/ramalho/calendar.js)
 calendar.js
 ============
 
