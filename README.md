@@ -12,8 +12,8 @@ Optional formatting functions may be passed as third and fourth arguments:
 one to format each date, the other to format each week.
 
     > cal = new c.Calendar();               // weeks start on Sunday by default
-    > m = cal.monthDates(2012,0,            // January is 0 in JS Date
-    ...   function(d) {return (' '+d.getDate()).slice(-2)}, 
+    > m = cal.monthDates(2012,1,
+    ...   function(d) {return (' '+d.getDate()).slice(-2)},
     ...   function(w) {return w.join(' | ')}
     );
     > for (i=0; i<m.length; i++) console.log(m[i]);
@@ -28,7 +28,7 @@ returns the day number from a date, or zero if the date does not belong to the
 month.
 
     > cal = new Calendar(1);               // weeks starting on Monday
-    > m = cal.monthDays(2012, 1);
+    > m = cal.monthDays(2012, 2);
     > for (i=0; i<m.length; i++) console.log(m[i]);
     [0, 0, 1, 2, 3, 4, 5]
     [6, 7, 8, 9, 10, 11, 12]
