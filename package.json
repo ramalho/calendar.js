@@ -3,9 +3,30 @@
   "main": "./lib/calendar.js",
   "description": "calendar generator",
   "version": "0.1.0",
+  "licence": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "git://github.com/ramalho/calendar.js.git"
+    "type": "git",
+    "url": "git://github.com/kaorun343/calendar.js.git"
   },
-  "author": "Luciano Ramalho <luciano@ramalho.org> (http://turing.com.br)"
+  "author": "Luciano Ramalho <luciano@ramalho.org> (http://turing.com.br)",
+  "contributors": [
+    "kaorun343"
+  ],
+  "directories": {
+    "test": "spec/"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib  --source-maps-inline",
+    "test": "mocha --compilers js:espower-babel/guess spec/calendar_spec.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "espower-babel": "^4.0.1",
+    "mocha": "^2.3.4",
+    "power-assert": "^1.2.0"
+  }
 }
