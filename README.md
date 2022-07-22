@@ -9,7 +9,9 @@ instances, including dates from the month before or after, as needed to fill
 the first and last weeks.
 
 Optional formatting functions may be passed as third and fourth arguments:
-one to format each date, the other to format each week.
+
+ - one to format each date; 
+ - the other to format each week.
 
     > cal = new c.Calendar();               // weeks start on Sunday by default
     > m = cal.monthDates(2012,0,            // January is 0 in JS Date
@@ -24,7 +26,7 @@ one to format each date, the other to format each week.
     29 | 30 | 31 |  1 |  2 |  3 |  4
 
 The `monthDays` function calls `monthDates` passing a simple function which
-returns the day number from a date, or zero if the date does not belong to the
+returns the day number for a date, or `0` if the date does not belong to the
 month.
 
     > cal = new Calendar(1);               // weeks starting on Monday
