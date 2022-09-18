@@ -28,3 +28,6 @@ for ( let row of table ) {
 }
 
 
+console.dir(m)
+
+

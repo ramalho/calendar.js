@@ -1,12 +1,12 @@
 {
-  "name": "calendar",
+  "name": "calendar-es6",
   "main": "./lib/calendar.js",
-  "description": "calendar generator",
-  "version": "0.1.1",
+  "description": "calendar generator based on calendar eith ES6 classes and a new method",
+  "version": "0.1.2",
   "repository": {
     "type" : "git",
-    "url" : "git://github.com/ramalho/calendar.js.git"
+    "url" : "git://github.com/copious-world/calendar.js.git"
   },
-  "author": "Luciano Ramalho <luciano@ramalho.org> (http://standupdev.com)",
+  "author": "Luciano Ramalho <luciano@ramalho.org> (http://standupdev.com) [added method : R Leddy]",
   "license": "MIT"
 }
