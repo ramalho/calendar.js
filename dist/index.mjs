@@ -77,7 +77,11 @@ class Calendar {
             for (let day of mlist) {
                 if (day !== false) {
                     let ds = day.toString();
-                    the_map[ds] = new InfoClass(...((ds.split(',').map(dd => parseInt(dd)))));
+                    let ifc = new InfoClass(...((ds.split(',').map(dd => parseInt(dd)))));
+                    the_map[ds] = ifc;
+                    if ( typeof ifc.fill_day === 'function' ) {
+                        ifc.fill_day(year,month,ds); 
+                    }
                 }
             }
         }
