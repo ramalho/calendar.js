@@ -82,6 +82,29 @@ class Events {
 }
 ```
 
+If there is a need, the **InfoClass** may be extended with a **fill\_day** method. If the **InfoClass** has the method, it will be called with the month's year, month, and a key for the day into the **map** field in the structure this method returns.
+
+Here is an example of an extended event class:
+
+```
+class Events {
+    constructor(day,index) {
+        this.day = day
+        this.index = index
+    }
+    
+    fill_day(year,month,key) {
+    	this.key = key
+    	let day_date = new Date(year,month,this.day);
+    	// now compute events or other things
+    }
+}
+```
+
+Some application may need the key as a back reference to the **InfoClass** instance.
+
+**Returned value:**
+
 The method returns a structure with three fields:
 
 * **list**
